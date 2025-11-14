@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ project.title }}{% endblock %}
+
+{% block content %}
+    <div class="project-header">
+        {% if project.image %}
+            <div class="project-image">
+                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="img-fluid">
+            </div>
+        {% endif %}
+        <h1>{{ project.title }}</h1>
+    </div>
+    
+    <p>{{ project.description }}</p>
+    <p>Goal Amount: {{ project.goal_amount }}</p>
+    <p>Current Amount: {{ project.current_amount }}</p>
+    <p>Funding Start Date: {{ project.funding_start_date }}</p>
+    <p>Funding End Date: {{ project.funding_end_date }}</p>
+    <p>Location: {{ project.location }}</p>
+    <p>Risk Level: {{ project.risk_level }}</p>
+    <p>Status: {{ project.project_status }}</p>
+    <a href="#" class="btn btn-primary">Invest in This Project</a>
+
+    <p>Business Plan: 
+        {% if project.business_plan %}
+            <a href="{{ project.business_plan.url }}">Download</a>
+        {% else %}
+            No business plan available
+        {% endif %}
+    </p>
+
+    <p>Key Investment Information Sheet: 
+        {% if project.kiis_document %}
+            <a href="{{ project.kiis_document.url }}">Download</a>
+        {% else %}
+            No KIIS available
+        {% endif %}
+    </p>
+
+    <p>Video Presentation: 
+        {% if project.video_presentation %}
+            <a href="{{ project.video_presentation }}" target="_blank">Watch</a>
+        {% else %}
+            Video unavailable
+        {% endif %}
+    </p>
+{% endblock %}

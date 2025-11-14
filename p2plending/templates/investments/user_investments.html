@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}My Investments{% endblock %}
+
+{% block content %}
+    <h1>My Investments</h1>
+    <ul>
+        {% for investment in investments %}
+            <li><a href="{% url 'investments:investment_details' investment.pk %}">Investment in {{ investment.project.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="loan-types-container">
+    <header class="loan-types-header">
+        <h1>Our Loan Types</h1>
+        <p>Explore the different loan options available to you at Bridge Capital. Each type of loan is designed to cater to specific needs and financial goals.</p>
+    </header>
+    
+    <section class="loan-type">
+        <div class="loan-type-content">
+            <h2>Personal Loans</h2>
+            <p>Personal loans are unsecured loans that can be used for a variety of personal needs such as medical expenses, travel, or debt consolidation. With flexible terms and competitive rates, they offer a great way to manage your personal finances.</p>
+            <a href="{% url 'apply_personal_loan' %}" class="btn btn-primary">Learn More</a>
+        </div>
+        <img src="{% static 'images/personal_loans.jpg' %}" alt="Personal Loans" class="loan-type-image">
+    </section>
+
+    <section class="loan-type">
+        <div class="loan-type-content">
+            <h2>Business Loans</h2>
+            <p>Business loans are designed to help small and medium-sized enterprises (SMEs) with their financial needs. Whether you need to expand your business, purchase new equipment, or cover operational costs, our business loans provide the necessary funding to help your business grow.</p>
+            <a href="{% url 'apply_business_loan' %}" class="btn btn-primary">Learn More</a>
+        </div>
+        <img src="{% static 'images/business_loans.jpg' %}" alt="Business Loans" class="loan-type-image">
+    </section>
+
+    <section class="loan-type">
+        <div class="loan-type-content">
+            <h2>Student Loans</h2>
+            <p>Student loans help cover the cost of education and related expenses. With flexible repayment options and competitive rates, these loans are tailored to support students in achieving their academic and career goals.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+        <img src="{% static 'images/student_loans.jpg' %}" alt="Student Loans" class="loan-type-image">
+    </section>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    .loan-types-container {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .loan-types-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .loan-types-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .loan-types-header p {
+        font-size: 1.2rem;
+        color: #666;
+    }
+
+    .loan-type {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .loan-type-content {
+        padding: 2rem;
+        flex: 1;
+    }
+
+    .loan-type-content h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .loan-type-content p {
+        font-size: 1.1rem;
+        color: #444;
+        margin-bottom: 1rem;
+    }
+
+    .btn-primary {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        color: #fff;
+        background-color: #007bff;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .loan-type-image {
+        width: 400px;
+        height: auto;
+        object-fit: cover;
+    }
+</style>
+{% endblock %}

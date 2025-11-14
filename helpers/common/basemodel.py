@@ -1,0 +1,34 @@
+from django.db import models
+import uuid
+from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
+
+class BaseModel(models.Model):
+   id = models.UUIDField(
+       default=uuid.uuid4,
+       editable=False,
+       primary_key=True,
+       help_text=_("The unique identifer of an object.")
+   )
+   created_date = models.DateTimeField(
+       verbose_name=_("Created Date"),
+       default=timezone.now,
+       editable=False,
+       help_text=_("Timestamp when the record was created."))
+
+   modified_date = models.CharField(
+       verbose_name=_("Modified Date"),
+       default=timezone.now,
+       editable=False,
+       help_text=_("Timestamp when the record was modified."))
+
+   #Metadata
+   class Meta :
+        abstract = True
+
+   #Methods
+   def get_absolute_url(self):
+       return reverse('url', args=[args])
+
+   def __str__(self):
+       return self.field

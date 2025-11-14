@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Capital</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/style.css' %}">
+    <!-- Add FontAwesome for icons (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl0UjX+7Lh7Tg7JDDjQdMzkK3JNR1A1lO9XtljxkE/TwQXt5qOe6pDpQOsK3GOGZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Add your custom stylesheet for the header text -->
+    
+</head>
+<body>
+    
+    <header class="header">
+        
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <!-- Professional Text -->
+                <div class="col-md-3 col-6">
+                    <div class="logo">
+                        <a href="{% url 'index' %}" class="logo-text">
+                            <img src="{% static 'frontend/assets/images/Transparent Logo.svg' %}" alt="Bridge Capital Logo" style=""> <!-- Adjust the height as needed -->
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="col-md-6 d-none d-md-flex justify-content-center">
+                    <nav class="main-nav">
+                        <ul class="nav-list">
+                            <li class="nav-item {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+                                <a href="{% url 'index' %}" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item {% if request.resolver_match.url_name == 'borrow' %}active{% endif %} dropdown">
+                                <a href="{% url 'borrow' %}" class="nav-link">Borrow</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{% url 'how_it_works' %}" class="dropdown-item">How It Works</a></li>
+                                    <li><a href="{% url 'loan_types' %}" class="dropdown-item">Loan Types</a></li>
+                                    <li><a href="{% url 'check_rates' %}"class="dropdown-item">Check Your Rate</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item {% if request.resolver_match.url_name == 'invest' %}active{% endif %} dropdown">
+                                <a href="{% url 'projects:project_list' %}" class="nav-link">Invest</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#how-it-works" class="dropdown-item">How It Works</a></li>
+                                    <li><a href="{% url 'benefits_investors' %}" class="dropdown-item">Benefits</a></li>
+                                    <li><a href="#" class="dropdown-item">Get Started</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item {% if request.resolver_match.url_name == 'about_us' %}active{% endif %}">
+                                <a href="{% url 'about_us' %}" class="nav-link">About Us</a>
+                            </li>
+                            <li class="nav-item {% if request.path == '/accounts/login' %}active{% endif %}">
+                                <a href="/accounts/login" class="nav-link">Login</a>
+                            </li>
+                            <li class="nav-item {% if request.path == '/accounts/sign-in' %}active{% endif %}">
+                                <a href="/accounts/signup" class="nav-link">Sign Up</a>
+                            </li>
+                        </ul> 
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Optional: Add JavaScript for interactive features -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl0UjX+7Lh7Tg7JDDjQdMzkK3JNR1A1lO9XtljxkE/TwQXt5qOe6pDpQOsK3GOGZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

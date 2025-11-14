@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'pages/partials/header.html' %}
+
+<section class="main-signin">
+    <div class="container">
+        <div class="sign-inbx">
+            <h1>Welcome Back</h1>
+            <p>Enter your credentials to sign in to<br> your account</p>
+            <div class="signbx">
+                <div class="inp-sty">
+                  <input type="text" placeholder="Email Address">
+                </div>
+                <div class="inp-sty">
+                  <input type="Password" placeholder="Password">
+                </div>
+                <button class="sub-btn" type="submit">Sign In</button>
+                <a href="javascript:;">Forgot Password?</a>
+
+                <div class="dmo-main">
+                    <button class="dmo-btn">Demo Borrower</button>
+                    <button class="dmo-btn">Demo Investor</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'pages/partials/footer.html' %}
+{% endblock %}

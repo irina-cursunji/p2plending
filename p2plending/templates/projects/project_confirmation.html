@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Project Submitted{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="alert alert-info">
+        <h1>Your Project Has Been Submitted</h1>
+        <p>Your project has been successfully sent for approval. The default risk is currently being calculated. You will be notified as soon as your project is approved.</p>
+        <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+    </div>
+</div>
+{% endblock %}

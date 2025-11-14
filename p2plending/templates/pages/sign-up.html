@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'pages/partials/header.html' %}
+
+
+
+<section class="main-chkout">
+    <div class="container">
+        <div class="stepwizard">
+            <div class="stepwizard-row setup-panel">
+                <div class="stepwizard-step col-xs-4">
+                    <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                    <p><small>Setup Account</small></p>
+                </div>
+                <div class="stepwizard-step col-xs-4">
+                    <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                    <p><small>Personal Details</small></p>
+                </div>
+                <div class="stepwizard-step col-xs-4">
+                    <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p><small>Fund Account</small></p>
+                </div>
+            </div>
+        </div>
+
+        <form role="form">
+            <!-- Step 1 -->
+            <div class="panel panel-primary setup-content" id="step-1">
+                <div class="panel-body">
+                    <h2 class="panel-title">Setup Your Account</h2>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" class="form-control" placeholder="Where do you live?">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Create Password</label>
+                        <input type="password" id="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label class="checke">
+                            I have read and agree to Bridge Capital's <a href="{% url 'terms_of_service' %}" >terms of service</a> and <a href="{% url 'privacy_policy' %}" >privacy policy</a>
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <a class="btn btn-primary" href="javascript:;">Create Your Account</a>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="panel panel-primary setup-content" id="step-2">
+                <div class="panel-body">
+                    <h3 class="panel-title">Personal Details</h3>
+                    <div class="form-group">
+                        <label for="company-name">Company Name</label>
+                        <input maxlength="200" type="text" id="company-name" class="form-control" placeholder="Enter Company Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="company-address">Company Address</label>
+                        <input maxlength="200" type="text" id="company-address" class="form-control" placeholder="Enter Company Address">
+                    </div>
+                    <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="panel panel-primary setup-content" id="step-3">
+                <div class="panel-body">
+                    <h3 class="panel-title">Funding Details</h3>
+                    <div class="form-group">
+                        <label for="funding-amount">Funding Amount</label>
+                        <input maxlength="200" type="text" id="funding-amount" class="form-control" placeholder="Enter Amount">
+                    </div>
+                    <div class="form-group">
+                        <label for="funding-source">Funding Source</label>
+                        <input maxlength="200" type="text" id="funding-source" class="form-control" placeholder="Enter Source">
+                    </div>
+                    <button class="btn btn-success pull-right" type="submit">Finish!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% include 'pages/partials/footer.html' %}
+{% endblock %}

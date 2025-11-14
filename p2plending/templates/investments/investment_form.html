@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Invest in {{ project.title }}{% endblock %}
+
+{% block content %}
+    <h1>Invest in {{ project.title }}</h1>
+    <form method="post" id="payment-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+            var stripe = Stripe('{{ settings.STRIPE_TEST_PUBLISHABLE_KEY }}');
+            var elements = stripe.elements();
+            
+            // Create an instance of the card Element
+            var card = elements.create('card');
+            card.mount('#card-element');
+            
+            // Handle form submission
+            var form = document.getElementById('payment-form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                stripe.createToken(card).then(function(result) {
+                    if (result.error) {
+                        // Display error.message in your UI
+                    } else {
+                        var tokenInput = document.createElement('input');
+                        tokenInput.setAttribute('type', 'hidden');
+                        tokenInput.setAttribute('name', 'stripeToken');
+                        tokenInput.setAttribute('value', result.token.id);
+                        form.appendChild(tokenInput);
+                        form.submit();
+                    }
+                });
+            });
+        </script>
+        <button type="submit">Invest</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Create New Project
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Create a New Project</h2>
+    <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                {{ form.title.label_tag }} 
+                {{ form.title }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ form.goal_amount.label_tag }} 
+                {{ form.goal_amount }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                {{ form.funding_start_date.label_tag }} 
+                {{ form.funding_start_date }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ form.funding_end_date.label_tag }} 
+                {{ form.funding_end_date }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                {{ form.description.label_tag }} 
+                {{ form.description }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                {{ form.location.label_tag }} 
+                {{ form.location }}
+            </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                {{ form.risk_level.label_tag }} 
+                {{ form.risk_level }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ form.project_status.label_tag }} 
+                {{ form.project_status }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                {{ form.business_plan.label_tag }} 
+                {{ form.business_plan }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ form.video_presentation.label_tag }} 
+                {{ form.video_presentation }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                {{ form.contact_email.label_tag }} 
+                {{ form.contact_email }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ form.contact_phone.label_tag }} 
+                {{ form.contact_phone }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-4">Submit Project</button>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% block content %}
+{% include 'pages/partials/header.html' %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefits for Investors | Bridge Capital</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/style.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">Benefits for Investors</h1>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="benefits-section">
+                <h2>Why Invest with Us?</h2>
+                <p>Investing with Bridge Capital in Rotterdam offers numerous advantages, setting us apart from other peer-to-peer lending platforms in the Netherlands.</p>
+                <ul class="benefit-list">
+                    <li><strong>Focus on Innovation:</strong> We fund innovative entrepreneurs who bring ideas into reality, ensuring your investments contribute to projects with a positive societal impact and practical implementation.</li>
+                    <li><strong>Competitive Interest Rates:</strong> Our platform yields competitive interest rates, providing better returns compared to traditional investment options.</li>
+                    <li><strong>Expert Assessment:</strong> We conduct thorough evaluations of each project, ensuring that only viable and impactful ideas receive funding.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Bridge Capital. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+{% include 'pages/partials/footer.html' %}
+
+{% endblock %}

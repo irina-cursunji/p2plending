@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'pages/partials/header.html' %}
+
+<section class="home-banner py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <div class="banner-text">
+                    <h1 class="display-4">Fund the future</h1>
+                    <p class="lead">Invest in innovation. Invest in talent. Invest in Rotterdam. </p>
+                    <a href="{% url 'projects:project_list' %}" class="btn btn-primary btn-lg">Invest</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid rounded" src="{% static 'frontend/assets/images/innovation.jpg' %}" alt="Banner">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="client-logos py-4">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-2 col-md-2 mb-3">
+                <img src="{% static 'frontend/assets/images/EUR Challenge logo kleur donker.png' %}" alt="Reuters" class="img-fluid">
+            </div>
+            <div class="col-2 col-md-2 mb-3">
+                <img src="{% static 'frontend/assets/images/EUR_ESE_EN stack_01b_RGB_2400_colour.png' %}" alt="Bloomberg" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="main-getloan py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="text-container">
+                    <h3 class="display-4 mb-4">Invest in 3 Simple Steps</h3>
+                    <div class="step mb-4">
+                        <h4 class="step-number">1.</h4>
+                        <div class="step-content">
+                            <h5>Discover</h5>
+                            <p>Browse loan applications from credit-checked borrowers with various ratings and terms.</p>
+                        </div>
+                    </div>
+                    <div class="step mb-4">
+                        <h4 class="step-number">2.</h4>
+                        <div class="step-content">
+                            <h5>Invest</h5>
+                            <p>Choose and fund the loans you wish to invest in with various amounts.</p>
+                        </div>
+                    </div>
+                    <div class="step mb-4">
+                        <h4 class="step-number">3.</h4>
+                        <div class="step-content">
+                            <h5>Earn</h5>
+                            <p>Receive your monthly returns in your Lendy account and reinvest or withdraw.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img class="img-fluid rounded shadow-lg" src="{% static 'frontend/assets/images/ritim.jpg' %}" alt="Investing steps">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="main-count py-5 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="counter">
+                    <span class="count" data-count="180400">0</span>
+                    <p>Customers</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="counter">
+                    <span class="count" data-count="3500000000">0</span>
+                    <p>€ Borrowed</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="counter">
+                    <span class="count" data-count="84500">0</span>
+                    <p>Average Customer Rating</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="main-goals py-5">
+    <div class="container text-center">
+        <h3 class="display-4">Mission</h3>
+        <p class="lead mb-4">By funding innovative entrepreneurs we aim to create social mobility and to promote startups that address our world's issues.</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="goal-box">
+                    <img src="{% static 'frontend/assets/images/rocket.jpg' %}" alt="Innovation" class="img-fluid goal-img">
+                    <h5 class="mt-3">Innovation</h5>
+                    <p>Bridge Capital works exclusively with businesses leading to positive societal impact.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="goal-box">
+                    <img src="{% static 'frontend/assets/images/writing.webp' %}" alt="Accurate Interest Rates" class="img-fluid goal-img">
+                    <h5 class="mt-3">Accurate Interest Rates</h5>
+                    <p>Our holistic credit risk analysis yields interest rates that satisfy both lenders and borrowers.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="goal-box">
+                    <img src="{% static 'frontend/assets/images/handshake.jpg' %}" alt="Community" class="img-fluid goal-img">
+                    <h5 class="mt-3">Community</h5>
+                    <p>Bridge Capital fosters relationships within communities transcending a simple contract.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Investment Opportunities Section -->
+<section class="investment-opportunities py-5 bg-light">
+    <div class="container text-center">
+        <h3 class="display-4">Investment Opportunities</h3>
+        <p class="lead mb-4">Explore a variety of projects to invest in and help shape the future of innovative startups.</p>
+        <a href="{% url 'projects:project_list' %}" class="btn btn-primary btn-lg">View Projects</a>
+    </div>
+</section>
+
+<section class="main-usersay py-5">
+    <div class="container text-center">
+        <h2 class="display-4">What our users are saying about us</h2>
+        <p class="lead">Don't take our word for it. Read testimonials from actual investors on Lendy.</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <p>As an investor in Rotterdam, Bridge Capital has made it easy to support local entrepreneurs while earning solid returns. The platform's transparent peer-to-peer lending system and detailed borrower profiles give me confidence in my investments. I highly recommend Bridge Capital for anyone looking to diversify their portfolio and contribute to the local business community.</p>
+                    <div class="user d-flex align-items-center">
+                        <img src="{% static 'frontend/assets/images/user.jpg' %}" alt="User" class="img-fluid rounded-circle me-3">
+                        <div>
+                            <h5>Hannah Maxwell</h5>
+                            <p>VP at Facebook</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat the above block for additional testimonials -->
+        </div>
+    </div>
+</section>
+
+<section class="main-getstart py-5 text-center">
+    <div class="container">
+        <h2 class="display-4">We want to help you succeed</h2>
+        <h3>Get your rate in just 2 minutes — it won't affect your credit score!</h3>
+        <a href="{% url 'get_started' %}" class="btn btn-primary btn-lg">Get started now</a>
+    </div>
+</section>
+
+{% include 'pages/partials/footer.html' %}
+
+{% endblock %}

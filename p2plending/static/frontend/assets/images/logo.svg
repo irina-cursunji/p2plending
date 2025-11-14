@@ -1,0 +1,14 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Stylized graphic part -->
+  <g>
+    <path d="M50 50 C50 20, 150 20, 150 50 C150 80, 50 80, 50 50" fill="none" stroke="#006644" stroke-width="4" />
+    <path d="M90 60 L90 130" stroke="#006644" stroke-width="4" />
+    <path d="M110 60 L110 130" stroke="#006644" stroke-width="4" />
+    <path d="M70 70 L70 110" stroke="#006644" stroke-width="4" />
+    <path d="M130 70 L130 110" stroke="#006644" stroke-width="4" />
+  </g>
+  
+  <!-- Text part -->
+  <text x="20" y="160" font-family="Arial" font-size="20" fill="#006644">Bridge Capital</text>
+  <text x="40" y="190" font-family="Arial" font-size="14" fill="#006644">FUND THE FUTURE</text>
+</svg>

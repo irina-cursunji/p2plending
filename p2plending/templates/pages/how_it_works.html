@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works | p2plending</title>
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/assets/css/font-awesome.min.css' %}">
+</head>
+
+<body>
+    {% include 'pages/partials/header.html' %}
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>How Peer-to-Peer Lending Works</h1>
+                <p>Discover the innovative way to borrow and invest with p2plending.</p>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <div class="row">
+                    <!-- Process Step 1 -->
+                    <div class="col-md-4 step">
+                        <div class="step-icon"><i class="fa fa-user"></i></div>
+                        <h3>1. Sign Up</h3>
+                        <p>Create an account on our platform. It's quick and easy. Once you're registered, you'll gain access to a range of financial opportunities.</p>
+                    </div>
+                    <!-- Process Step 2 -->
+                    <div class="col-md-4 step">
+                        <div class="step-icon"><i class="fa fa-calculator"></i></div>
+                        <h3>2. Choose Your Investment</h3>
+                        <p>Browse through various lending opportunities. Select the loan that suits your investment goals or apply for a loan tailored to your needs.</p>
+                    </div>
+                    <!-- Process Step 3 -->
+                    <div class="col-md-4 step">
+                        <div class="step-icon"><i class="fa fa-handshake-o"></i></div>
+                        <h3>3. Invest or Borrow</h3>
+                        <p>Invest in loans to earn competitive returns or apply for a loan to fund your projects. Our platform connects you directly with your financial goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages">
+            <div class="container">
+                <h2>Why Choose Peer-to-Peer Lending?</h2>
+                <div class="row">
+                    <!-- Advantage 1 -->
+                    <div class="col-md-6 advantage">
+                        <div class="advantage-icon"><i class="fa fa-money"></i></div>
+                        <h3>Higher Returns</h3>
+                        <p>Enjoy better returns on investments compared to traditional savings accounts or investment options.</p>
+                    </div>
+                    <!-- Advantage 2 -->
+                    <div class="col-md-6 advantage">
+                        <div class="advantage-icon"><i class="fa fa-rocket"></i></div>
+                        <h3>Faster Access</h3>
+                        <p>Quickly access funds or investments without lengthy bank procedures or intermediaries.</p>
+                    </div>
+                    <!-- Advantage 3 -->
+                    <div class="col-md-6 advantage">
+                        <div class="advantage-icon"><i class="fa fa-globe"></i></div>
+                        <h3>Global Reach</h3>
+                        <p>Connect with a global network of investors and borrowers, expanding your financial opportunities.</p>
+                    </div>
+                    <!-- Advantage 4 -->
+                    <div class="col-md-6 advantage">
+                        <div class="advantage-icon"><i class="fa fa-lock"></i></div>
+                        <h3>Transparency</h3>
+                        <p>Enjoy full transparency with clear terms and conditions, and track your investments or loans with ease.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="local-benefits">
+            <div class="container">
+                <h2>Why Peer-to-Peer Lending is Ideal for Rotterdam</h2>
+                <div class="row">
+                    <!-- Local Benefit 1 -->
+                    <div class="col-md-4 benefit">
+                        <div class="benefit-icon"><i class="fa fa-building"></i></div>
+                        <h3>Support Local Businesses</h3>
+                        <p>Empower Rotterdam’s vibrant business community by investing in or borrowing from local enterprises.</p>
+                    </div>
+                    <!-- Local Benefit 2 -->
+                    <div class="col-md-4 benefit">
+                        <div class="benefit-icon"><i class="fa fa-city"></i></div>
+                        <h3>Community Growth</h3>
+                        <p>Drive economic growth in Rotterdam by participating in a financial system that directly benefits the city’s residents.</p>
+                    </div>
+                    <!-- Local Benefit 3 -->
+                    <div class="col-md-4 benefit">
+                        <div class="benefit-icon"><i class="fa fa-star"></i></div>
+                        <h3>Attractive Returns</h3>
+                        <p>Leverage competitive returns on investments that are tailored to the local market dynamics of Rotterdam.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="call-to-action">
+            <div class="container">
+                <h2>Ready to Get Started?</h2>
+                <p>Join the revolution in financial lending and investment today. Sign up to experience the future of finance.</p>
+                <a href="{% url 'get_started' %}" class="btn btn-primary">Get Started</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    {% include 'pages/partials/footer.html' %}
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Invest in {{ project.title }}{% endblock %}
+
+{% block content %}
+    <h1>Invest in {{ project.title }}</h1>
+    <form method="post" id="investment-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <!-- PSP-specific integration (e.g., payment fields and scripts) should be handled here -->
+        <!-- Example placeholder for PSP payment elements -->
+        <div id="payment-container">
+            <!-- Replace this with PSP-specific payment element -->
+        </div>
+
+        <button type="submit">Invest</button>
+    </form>
+{% endblock %}

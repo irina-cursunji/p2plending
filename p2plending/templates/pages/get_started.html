@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started with Bridge Capital</title>
+    {% load static %}
+    <link href="{% static 'frontend/assets/css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'frontend/assets/css/animate.css' %}" rel="stylesheet" />
+    <link href="{% static 'frontend/assets/css/custom.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to Bridge Capital</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <div class="container">
+                <h2>For Investors</h2>
+                <p>As an investor with Bridge Capital, you have the opportunity to fund innovative entrepreneurs and earn competitive interest rates. Here’s how to get started:</p>
+            </div>
+        </section>
+
+        <section class="how-to-get-started">
+            <div class="container">
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-icon"><i class="fa fa-user"></i></div>
+                        <h3>Sign Up</h3>
+                        <p>Create an account by providing your personal details and verifying your email address.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fa fa-pencil-square-o"></i></div>
+                        <h3>Complete Your Profile</h3>
+                        <p>Fill in your investment preferences, risk tolerance, and financial details.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fa fa-search"></i></div>
+                        <h3>Explore Opportunities</h3>
+                        <p>Browse through available projects and entrepreneurs seeking funding. Our platform focuses on initiatives with positive societal impacts and practical implementation.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fa fa-money"></i></div>
+                        <h3>Invest</h3>
+                        <p>Choose the projects that align with your interests and start investing. You can diversify your portfolio across multiple projects to spread risk.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fa fa-line-chart"></i></div>
+                        <h3>Earn Returns</h3>
+                        <p>Receive regular updates on your investments and enjoy competitive interest rates on your funded projects.</p>
+                    </div>
+                </div>
+                <a href="{% url 'sign_up' %}" class="btn btn-primary">Sign Up Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bridge Capital. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+    <link href="{% static 'frontend/assets/css/style.css' %}" rel="stylesheet" />
+{% endblock css %}
+
+{% block content %}
+
+{% include 'pages/partials/header.html' %}
+
+<section class="about-section">
+    <div class="container">
+        <div class="about-text">
+            <h1>Your financial well-being is our mission at Bridge Capital.</h1>
+        </div>
+        <div class="about-image">
+            <img class="img-responsive" src="{% static 'frontend/assets/images/campus.jpg' %}" alt="Erasmus University Campus">
+        </div>
+    </div>
+</section>
+
+<section class="main-goals about">
+    <div class="container">
+        <h3>About Us</h3>
+        <p>Bridge Capital was founded in January 2024 in Rotterdam by an ambitious Erasmus School of Economics student, Maxwell Koulen. Maxwell dreams of a future where finance truly benefits society through both innovation and social mobility.</p>
+        <p>Bridge Capital has since facilitated more than $3.5 billion in loans to over 180,000 people. Through our platform, people can invest in each other in a way that is both financially and socially rewarding. Borrowers apply online for a fixed-rate, fixed-term loan between $2,000 and $5,000,000. Individuals and institutions can invest in the loans and earn attractive returns. Bridge Capital handles all loan servicing on behalf of the matched borrowers and investors.</p>
+        <p>Bridge Capital's marketplace is backed by leading investors including Sequoia Capital, Francisco Partners, Institutional Venture Partners, and Credit Suisse NEXT Fund.</p>
+    </div>
+</section>
+
+<section class="main-count about">
+    <div class="container">
+        <div class="count-box">
+            <i class="count counterdigi" data-count="650"></i>
+            <i>180,400</i>
+            <p>Customers</p>
+        </div>
+        <div class="count-box">
+            <span class="count counterdigi" data-count="80"></span>
+            <i>$3.5 Billion</i>
+            <p>Borrowed</p>
+        </div>
+        <div class="count-box">
+            <span class="count counterdigi" data-count="84500"></span>
+            <i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </i>
+            <p>Average Customer Rating</p>
+        </div>
+    </div>
+</section>
+
+<section class="main-team">
+    <div class="container">
+        <h3>Team</h3>
+        <p>Mobitiy Banking was founded by a well experienced team with a combined<br>experience of over 25 years in the financial services industry.</p>
+
+        <div class="row">
+          {% for team in team_members %}
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="team">
+                    <img src="{{team.photo.url}}" alt="{{team.name}}">
+                    <h6>{{team.name}}</h6>
+                    <p>{{team.designation}}</p>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<section class="erasmus-university-coverage">
+    <div class="container">
+        <h3>Erasmus University Challenge</h3>
+        <p>Bridge Capital has been recognized by the Erasmus University Challenge for its innovative approach to financing and social impact. The challenge highlighted how Bridge Capital's platform empowers individuals and institutions to invest in each other, fostering both financial growth and community development. This recognition underscores the commitment of Bridge Capital to enhancing social mobility through financial innovation.</p>
+    </div>
+</section>
+
+<section class="client-coverage">
+    <div class="container">
+        <h3>Press Coverage</h3>
+        <p>Bridge Capital has been covered by major news outlets and media companies</p>
+        <div class="client-logos">
+            <ul>
+                <li><img src="{% static 'frontend/assets/images/reuters.svg' %}" alt="Reuters"></li>
+                <li><img src="{% static 'frontend/assets/images/bloomberg.svg' %}" alt="Bloomberg"></li>
+                <li><img src="{% static 'frontend/assets/images/npr.svg' %}" alt="NPR"></li>
+                <li><img src="{% static 'frontend/assets/images/nbc.svg' %}" alt="NBC"></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="main-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="news-article">
+                    <h5>Forbes</h5>
+                    <h6>May 29, 2018</h6>
+                    <p>CEO Maxwell Koulen Talks Borrowing and Investing with Bridge Capital</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div> 
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="news-article">
+                    <h5>Erasmus University Challenge</h5>
+                    <h6>March 15, 2024</h6>
+                    <p>Bridge Capital's Innovative Approach Revolutionizes Social Lending</p>
+                    <a href="https://erasmusuniversitychallenge.nl/candidate/details/35814">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="news-article">
+                    <h5>LinkedIn</h5>
+                    <h6>Latest Post</h6>
+                    <!-- Adjusted iframe size for better visibility -->
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7213586238333726722" frameborder="0" allowfullscreen="" title="LinkedIn Post"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'pages/partials/footer.html' %}
+
+{% endblock %}

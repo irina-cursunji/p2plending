@@ -1,0 +1,692 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Lora', serif; /* Changed to Lora font for a refined look */
+    background-color: #f4f4f9; /* Light grey background for a clean look */
+    margin: 0;
+    padding: 0;
+    color: #333333; /* Dark grey text color for readability */
+}
+
+/* Typography Reset */
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Links */
+a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #007bff; /* Primary color for links */
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue on link hover */
+}
+
+/* Header Styles */
+.header {
+    background-color: transparent; /* Transparent background */
+    border-bottom: 3px solid #800020; /* Dark burgundy red underline */
+    padding: 10px 0;
+    position: relative;
+}
+
+/* Logo Styling */
+.logo img {
+    height: 80px; /* Adjust the height as needed */
+    width: auto;  /* Maintain aspect ratio */
+}
+
+
+.logo-text {
+    font-size: 1.5rem; /* Adjust as needed */
+    font-weight: 700;
+    color: #333333; /* Dark grey color for the logo text */
+    text-decoration: none; /* Remove underline */
+}
+
+.logo-text:hover {
+    color: #800020; /* Optional color change on hover */
+}
+
+/* Navigation Styles */
+.main-nav .nav-list, .header-right .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-nav .nav-item, .header-right .nav-item {
+    position: relative;
+}
+
+.main-nav .nav-link, .header-right .nav-link {
+    color: #333333; /* Dark grey color for navigation links */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px;
+    display: block;
+    transition: color 0.3s, text-decoration 0.3s;
+    white-space: nowrap;
+}
+
+.main-nav .nav-link:hover, .header-right .nav-link:hover {
+    color: #800020; /* Dark burgundy color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.main-nav .nav-item.active .nav-link, .header-right .nav-item.active .nav-link {
+    color: #800020; /* Dark burgundy color for active page */
+}
+
+.main-nav .nav-item.active::after, .header-right .nav-item.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Thickness of the underline */
+    background-color: #800020; /* Dark burgundy red underline */
+}
+
+/* Dropdown Menu Styles */
+.main-nav .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff; /* White background for dropdown */
+    border: 1px solid #dcdcdc; /* Light grey border */
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    display: none;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav .dropdown:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
+
+.main-nav .dropdown-item {
+    padding: 10px 0;
+    color: #333333; /* Dark grey text color for dropdown items */
+    text-decoration: none; /* Remove underline */
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.main-nav .dropdown-item:hover {
+    background-color: #f4f4f9; /* Light grey background on hover */
+}
+
+/* Hero Section Styles */
+.hero, .home-banner {
+    color: #333333; /* Dark grey text color */
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.hero {
+    background-color: #ffffff; /* White background */
+    padding: 60px 0;
+}
+
+.home-banner {
+    background: url('{% static "frontend/assets/images/homban.jpg" %}') no-repeat center center;
+    background-size: cover;
+    color: #333333; /* White text for contrast */
+    padding: 80px 0;
+    margin-bottom: 40px;
+}
+
+.hero .display-4 {
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.hero-logo img {
+    max-height: 120px; /* Smaller logo size */
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+button, .btn, .btn-primary, .btn-get-started {
+    background-color: #141F3E; /* Light pine green */
+    border-color: #141F3E;
+    color: #ffffff;
+    padding: 12px 24px; /* Adjust padding for elegance */
+    border-radius: 8px; /* Rounded corners */
+    font-family: 'Lora', serif;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 1em; /* Optional, for additional space */
+}
+
+button:hover, .btn:hover, .btn-primary:hover, .btn-get-started:hover {
+    background-color: #081025; /* Darker pine green */
+    border-color: #081025;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:focus, .btn:focus, .btn-primary:focus, .btn-get-started:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(111, 191, 115, 0.5); /* Optional focus ring */
+}
+
+.btn-get-started {
+    background-color: #141F3E; /* Green */
+    border-color: #141F3E;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+.btn-get-started:hover {
+    background-color: #081025; /* Darker Green */
+    border-color: #081025;
+}
+
+/* Text and Button Spacing */
+.btn-container {
+    margin-top: 20px; /* Space between text and button */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #f4f4f9; /* Light grey background */
+    color: #333333; /* Dark grey text color */
+    padding: 20px 0;
+}
+
+.footer a {
+    color: #007bff; /* Blue link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer .list-inline-item {
+    margin: 0 10px;
+}
+
+.footer .list-inline-item a {
+    color: #007bff; /* Ensure links are blue */
+}
+
+.footer .list-inline-item a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer .ft-para {
+    font-size: 12px;
+    margin-top: 20px;
+    color: #6c757d; /* Light grey text color */
+}
+
+/* Footer Sections */
+.ft-lst {
+    margin-bottom: 20px;
+}
+
+.ft-lst h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.ft-lst ul {
+    padding: 0;
+    list-style: none;
+}
+
+.ft-lst ul li {
+    margin-bottom: 5px;
+}
+
+.ft-lst ul li a {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none;
+}
+
+.ft-lst ul li a:hover {
+    text-decoration: underline;
+}
+
+.ft-abt {
+    text-align: center;
+}
+
+.social-bx ul {
+    padding: 0;
+    list-style: none;
+    margin: 10px 0 0;
+}
+
+.social-bx ul li {
+    display: inline;
+    margin: 0 5px;
+}
+
+.social-bx ul li a {
+    color: #007bff; /* Blue color */
+    font-size: 20px;
+}
+
+.social-bx ul li a:hover {
+    color: #0056b3; /* Darker blue */
+}
+
+/* Miscellaneous Styles */
+.page-content {
+    padding: 20px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-family: 'Arial', sans-serif; /* Ensure font consistency on smaller screens */
+        color: #333333; /* Dark grey text color */
+    }
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.about-section, .main-goals, .main-count, .main-team, .client-coverage, .main-news {
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.about-text, .about-links, .about-image, .count-box, .team-member, .client-logos, .news-article {
+    margin-bottom: 30px;
+}
+
+.about-text h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-links ul {
+    display: flex;
+    gap: 20px;
+}
+
+.about-links ul li {
+    list-style: none;
+}
+
+.about-links ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.main-goals p, .main-team p, .client-coverage p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.count-box {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-member h6 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.client-logos ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.client-logos ul li {
+    list-style: none;
+}
+
+.news-article {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: #333;
+}
+
+.news-article h5 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.news-article h6 {
+    font-size: 1.1em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.news-article p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.news-article a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Add these styles to your CSS file */
+
+/* Ensure goal-box has padding and centers content */
+.goal-box {
+    padding: 20px;
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.goal-box:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+}
+
+/* Ensure images are the same size */
+.goal-img {
+    width: 100%;
+    height: 200px; /* Set fixed height */
+    object-fit: cover; /* Ensure images cover the box */
+    border-radius: 8px; /* Rounded corners for images */
+}
+
+/* Optional: Add margin to headings and paragraphs */
+h5 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+/* About Section Styles */
+.about-section {
+    margin: 40px 0;
+    padding: 20px;
+}
+
+.about-section .about-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-section .about-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.about-section .about-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-section .about-links ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.about-section .about-links ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+}
+
+.about-section .about-image {
+    margin-top: 20px;
+}
+
+.about-section .about-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Main Goals Section */
+.main-goals {
+    margin: 40px 0;
+}
+
+.main-goals h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.main-goals p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Main Count Section */
+.main-count {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.main-count .count-box {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.main-count .count-box i {
+    display: block;
+    font-size: 2rem;
+    color: #007bff;
+}
+
+/* Team Section */
+.main-team {
+    margin: 40px 0;
+}
+
+.main-team h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.main-team .team-member {
+    text-align: center;
+}
+
+.main-team .team-member img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Container for the project list */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Grid Layout for Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Individual Project Card Styling */
+.project-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Title Styling */
+.project-card h2 {
+    font-size: 1.5em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* Project Description Styling */
+.project-card p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* View Details Button Styling */
+.view-details {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.view-details:hover {
+    background: #0056b3;
+}
+
+/* Create Project Button Styling */
+.create-project {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.create-button {
+    padding: 12px 25px;
+    background: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.create-button:hover {
+    background: #218838;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+h1 {
+    font-size: 2.5rem; /* Scales with root font size */
+    margin-bottom: 2rem;
+}
+
+.project-card {
+    padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically on small screens */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.project-card {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        padding: 15px;
+    }
+}
+
+.footer-icon {
+    width: 30px; /* Adjust the size as needed */
+    height: 30px; /* Keep aspect ratio intact */
+}
+

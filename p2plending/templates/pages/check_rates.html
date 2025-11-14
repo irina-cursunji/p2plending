@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Your Rates</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Check Your Rates</h1>
+        <form id="checkRatesForm" class="mt-4">
+            <div class="form-group">
+                <label for="loanAmount">Loan Amount</label>
+                <input type="number" class="form-control" id="loanAmount" placeholder="Enter loan amount" required>
+            </div>
+            <div class="form-group">
+                <label for="loanTerm">Loan Term (years)</label>
+                <input type="number" class="form-control" id="loanTerm" placeholder="Enter loan term" required>
+            </div>
+            <div class="form-group">
+                <label for="creditScore">Credit Score</label>
+                <input type="number" class="form-control" id="creditScore" placeholder="Enter your credit score" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Check Rates</button>
+        </form>
+        <div class="mt-4" id="results" style="display: none;">
+            <h3>Estimated Interest Rate: <span id="interestRate"></span>%</h3>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('checkRatesForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get the form values
+            const loanAmount = document.getElementById('loanAmount').value;
+            const loanTerm = document.getElementById('loanTerm').value;
+            const creditScore = document.getElementById('creditScore').value;
+
+            // Placeholder calculation for interest rate based on input values
+            let interestRate;
+            if (creditScore >= 750) {
+                interestRate = 3.5;
+            } else if (creditScore >= 700) {
+                interestRate = 4.5;
+            } else if (creditScore >= 650) {
+                interestRate = 5.5;
+            } else {
+                interestRate = 7.0;
+            }
+
+            // Display the result
+            document.getElementById('interestRate').textContent = interestRate.toFixed(2);
+            document.getElementById('results').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

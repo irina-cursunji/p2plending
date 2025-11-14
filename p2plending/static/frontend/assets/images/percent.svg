@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512">
+    <g fill="none" stroke="black" stroke-width="4">
+        <!-- Diagonal Upwards Arrow -->
+        <path d="M12,48 L28,32 L44,48" />
+        <path d="M12,48 L12,16 L44,16 L44,48" />
+    </g>
+</svg>

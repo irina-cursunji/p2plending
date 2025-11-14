@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Peer to Peer lending platform for entrepreneurs" />
+    <meta name="author" content="Maxwell Koulen" />
+    <title>{% block title %}p2plending{% endblock %}</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'frontend/assets/images/favicons/favicon.ico' %}" />
+    {% block css %}
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" 
+              integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" 
+              crossorigin="anonymous" 
+              referrerpolicy="no-referrer" />
+        <!-- Custom CSS -->
+        <link href="{% static 'frontend/assets/css/style.css' %}" rel="stylesheet" />
+    {% endblock css %}
+</head>
+<body class="{% block bodyclass %}{% endblock bodyclass %}">
+   
+    <!-- Main Content -->
+    <main role="main" class="container my-4">
+        <!-- Main content -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center py-3">
+        <div class="container">
+            <p class="m-0">&copy; {{ current_year }} p2plending. All rights reserved.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="{% url 'about' %}">About Us</a></li>
+                <li class="list-inline-item"><a href="{% url 'contact' %}">Contact</a></li>
+                <li class="list-inline-item"><a href="{% url 'privacy_policy' %}">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="{% url 'terms_of_service' %}">Terms of Service</a></li>
+                <li class="list-inline-item">
+                    <a href="https://www.linkedin.com/company/mobility-banking" target="_blank">
+                        <img src="{% static 'frontend/assets/images/linkedin-icon.png' %}" alt="LinkedIn" class="footer-icon">
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/p2plendingeu" target="_blank">
+                        <img src="{% static 'frontend/assets/images/instagram-icon.png' %}" alt="Instagram" class="footer-icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    {% block js %}
+        <!-- Bootstrap JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" 
+                integrity="sha512-kJ6q7EF7eZmF3G4B7u9zt/TK9wUlYQsZbF0OjSZY5p2/KevnDbmcYjzo2lqJzy4iwHT76LpJX99lG4IjJzzbCg==" 
+                crossorigin="anonymous" 
+                referrerpolicy="no-referrer"></script>
+    {% endblock js %}
+</body>
+</html>

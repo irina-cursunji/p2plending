@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+    <link href="{% static 'frontend/assets/css/style.css' %}" rel="stylesheet" />
+{% endblock css %}
+
+{% block content %}
+
+{% include 'pages/partials/header.html' %}
+
+<div class="container">
+    <header class="page-header">
+        <h1 class="page-title">Our Projects</h1>
+    </header>
+
+    <section class="projects-section">
+        <div class="projects-grid">
+            {% for project in projects %}
+                <div class="project-card">
+                    {% if project.image %}
+                        <div class="project-image">
+                            <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                        </div>
+                    {% endif %}
+                    <h2 class="project-title">{{ project.title }}</h2>
+                    <p class="project-description">{{ project.description|truncatewords:20 }}</p>
+                    <a href="{% url 'projects:project_detail' project.pk %}" class="view-details">View Details</a>
+                </div>
+            {% empty %}
+                <p>No projects available at the moment. Check back later!</p>
+            {% endfor %}
+        </div>
+    </section>
+
+</div>
+
+{% include 'pages/partials/footer.html' %}
+
+{% endblock content %}

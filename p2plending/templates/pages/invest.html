@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+{% include 'pages/partials/header.html' %}
+
+<section class="main-banner py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <div class="banner-text">
+                    <h1 class="display-4">Invest in the Future</h1>
+                    <p class="lead">Empower innovation. Support talent. Invest in Rotterdam.</p>
+                    <a href="{% url 'invest' %}" class="btn btn-primary btn-lg">Invest Now</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid rounded" src="{% static 'frontend/assets/images/innovation.jpg' %}" alt="Banner">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="client-logos py-4 bg-light">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-2">
+                <img src="{% static 'frontend/assets/images/reuters.svg' %}" alt="Reuters" class="img-fluid">
+            </div>
+            <div class="col-2">
+                <img src="{% static 'frontend/assets/images/bloomberg.svg' %}" alt="Bloomberg" class="img-fluid">
+            </div>
+            <div class="col-2">
+                <img src="{% static 'frontend/assets/images/npr.svg' %}" alt="NPR" class="img-fluid">
+            </div>
+            <div class="col-2">
+                <img src="{% static 'frontend/assets/images/nbc.svg' %}" alt="NBC" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="main-goals py-5">
+    <div class="container text-center">
+        <h3 class="display-4">Discover a New Way to Invest</h3>
+        <p class="lead mb-4">Peer-to-peer lending allows you to lend your money to people online. It's a type of investment that we make as easy and rewarding as possible.</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="goal-box">
+                    <img src="{% static 'frontend/assets/images/approval.svg' %}" alt="Creditworthy Borrowers" class="img-fluid">
+                    <h5 class="mt-3">Creditworthy Borrowers</h5>
+                    <p>Browse loan listings from approved, creditworthy borrowers on Lendy.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="goal-box">
+                    <img src="{% static 'frontend/assets/images/wallet.svg' %}" alt="Earn up to 6.5% p.a" class="img-fluid">
+                    <h5 class="mt-3">Earn up to 6.5% p.a</h5>
+                    <p>Earn 4% - 6.5% per annum over 5 years and 3% - 5% per annum over 3 years with Lendy.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="goal-box">
+                    <img src="{% static 'frontend/assets/images/dollar.svg' %}" alt="Diversify your portfolio" class="img-fluid">
+                    <h5 class="mt-3">Diversify Your Portfolio</h5>
+                    <p>Diversify your Lendy portfolio by investing in different loans and borrowers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="main-invest-steps py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="text-container">
+                    <h3 class="display-4 mb-4">Invest in 3 Simple Steps</h3>
+                    <div class="step mb-4">
+                        <h4 class="step-number">1.</h4>
+                        <div class="step-content">
+                            <h5>Discover</h5>
+                            <p>Browse loan applications from credit-checked borrowers with various ratings and terms.</p>
+                        </div>
+                    </div>
+                    <div class="step mb-4">
+                        <h4 class="step-number">2.</h4>
+                        <div class="step-content">
+                            <h5>Invest</h5>
+                            <p>Choose and fund the loans you wish to invest in with your chosen amount.</p>
+                        </div>
+                    </div>
+                    <div class="step mb-4">
+                        <h4 class="step-number">3.</h4>
+                        <div class="step-content">
+                            <h5>Earn</h5>
+                            <p>Receive monthly returns in your account and choose to reinvest or withdraw.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img class="img-fluid rounded shadow-lg" src="{% static 'frontend/assets/images/investment_steps.jpg' %}" alt="Investing steps">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="main-count py-5 text-center bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="counter">
+                    <span class="count" data-count="180400">0</span>
+                    <p>Customers</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="counter">
+                    <span class="count" data-count="3500000000">0</span>
+                    <p>€ Invested</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="counter">
+                    <span class="count" data-count="84500">0</span>
+                    <p>Customer Ratings</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="main-testimonials py-5">
+    <div class="container text-center">
+        <h2 class="display-4">What Our Users Say</h2>
+        <p class="lead">Hear from our satisfied investors.</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <p>Lendy is by far the easiest way to invest I have found online and I have not had a problem since I started investing with them in 2016.</p>
+                    <div class="user d-flex align-items-center">
+                        <img src="{% static 'frontend/assets/images/user.jpg' %}" alt="User" class="img-fluid rounded-circle me-3">
+                        <div>
+                            <h5>Hannah Maxwell</h5>
+                            <p>VP at Facebook</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat the above block for additional testimonials -->
+        </div>
+    </div>
+</section>
+
+<section class="main-get-started py-5 text-center">
+    <div class="container">
+        <h2 class="display-4">We Want to Help You Succeed</h2>
+        <h3>Get your rate in just 2 minutes — it won't affect your credit score!</h3>
+        <a href="{% url 'get_started' %}" class="btn btn-primary btn-lg">Get Started Now</a>
+    </div>
+</section>
+
+{% include 'pages/partials/footer.html' %}
+
+{% endblock %}
